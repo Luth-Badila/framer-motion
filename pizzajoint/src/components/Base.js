@@ -15,6 +15,10 @@ const containerVariants = {
       delay: 0.5,
     },
   },
+  exit: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" },
+  },
 };
 
 const nextVariants = {
@@ -46,7 +50,7 @@ const Base = ({ addBase, pizza }) => {
   const bases = ["Classic", "Thin & Crispy", "Thick Crust"];
 
   return (
-    <motion.div className="base container" variants={containerVariants} initial="hidden" animate="visible">
+    <motion.div className="base container" variants={containerVariants} initial="hidden" animate="visible" exit="exit">
       <h3>Step 1: Choose Your Base</h3>
       <ul>
         {bases.map((base) => {
